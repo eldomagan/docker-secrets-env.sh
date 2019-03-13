@@ -36,14 +36,11 @@ do
     env_key=$filename
     if [ $PREFIX_LEN -ne 0 ]
     then
-      ((PREFIX_LEN++))
-      env_key=$(echo $filename | cut -c$PREFIX_LEN-${#filename})
+      env_key=$(echo $filename | cut -c$((PREFIX_LEN+1))-${#filename})
     fi
 
     env_value=$(cat $file)
 
-    echo "export $env_key=$env_value" >> .docker-secrets-env
-    source ./docker-secrets-env
-    rm .docker-secrets-env
+    export $env_key="${env_value}"
   fi
 done
