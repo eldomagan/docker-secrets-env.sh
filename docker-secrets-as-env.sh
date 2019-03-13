@@ -2,7 +2,6 @@ SECRETS_DIR=/run/secrets
 PREFIX=ENV_
 
 # Parse args
-POSITIONAL=()
 while [[ $# -gt 0 ]]
 do
   key="$1"
