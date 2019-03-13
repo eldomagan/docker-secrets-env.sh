@@ -24,13 +24,13 @@ The prefix is removed from exported var and secrets names are uppercased
 Exemple:
 if i have the following secrets
 
-/run/secrets/env_my_secret
-/run/secrets/ENV_another_secret
+/run/secrets/env_my_secret<br>
+/run/secrets/ENV_another_secret<br>
 /run/secrets/wont_be_exported
 
 Exported env will be:
 
-MY_SECRET
+MY_SECRET<br>
 ANOTHER_SECRET
 
 You can test by running
