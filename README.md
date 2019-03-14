@@ -56,5 +56,7 @@ services:
     secrets:
       - env_my_docker_secret
       - ENV_RANDOM_PRIVATE_KEY
-    command: source ./docker-secrets-as-env.sh && entrypoint.sh
+    volumes:
+      - ./docker-secrets-as-env.sh:/tmp/docker-secrets-as-env.sh
+    command: /bin/bash -c "source /tmp/docker-secrets-as-env.sh && start-cmd
 ```
